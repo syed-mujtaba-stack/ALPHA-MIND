@@ -1,11 +1,24 @@
-<<<<<<< HEAD
 # 🚀 ALPHA MIND - Intelligent Hybrid AI Chatbot System
 
-A powerful hybrid AI chat platform that combines cloud AI models (via OpenRouter) with local/offline models (via liteLLM) for fast, cheap, and privacy-focused AI conversations.
+<div align="center">
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
+[![React](https://img.shields.io/badge/React-18+-61DAFB.svg)](https://reactjs.org/)
+[![Django](https://img.shields.io/badge/Django-4.0+-092E20.svg)](https://www.djangoproject.com/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6.svg)](https://www.typescriptlang.org/)
+
+**A powerful hybrid AI chat platform that combines cloud AI models (via OpenRouter) with local/offline models (via liteLLM) for fast, cheap, and privacy-focused AI conversations.**
+
+[📖 Documentation](#-documentation) • [🚀 Getting Started](#-getting-started) • [🎯 Features](#-features) • [🏗️ Architecture](#️-architecture)
+
+</div>
+
+---
 
 ## ✨ Features
 
-### Core Features
+### 🎯 Core Features
 - 🔄 **Hybrid AI System**: Switch between cloud (OpenRouter) and local (liteLLM) models
 - 🤖 **Multiple AI Models**: GPT-4, Claude 3.5, Gemini, Llama, Grok, Deepseek, and local models
 - ⚡ **Streaming Chat**: Real-time responses like ChatGPT
@@ -15,155 +28,107 @@ A powerful hybrid AI chat platform that combines cloud AI models (via OpenRouter
 - 👤 **User System**: Firebase Authentication with profiles and history
 - 🌙 **Dark/Light Mode**: Modern UI with theme switching
 
-### Advanced Features
+### 🚀 Advanced Features
 - 🎤 **Voice Chat**: Speech → Text & Text → Speech
 - 🎨 **Image Generation**: AI-powered image creation
 - 📄 **Document Summaries**: Smart document analysis
 - 🔍 **Web Search Mode**: Real-time web information
 - 🤖 **AI Agents**: Task automation
-=======
-# ALPHA MIND – Intelligent Hybrid AI Chatbot System
 
-A powerful hybrid AI chat platform that combines cloud AI models (via OpenRouter) with local/offline models (via liteLLM) for fast, cheap, and privacy-focused AI conversations.
-
-## 🚀 Features
-
-### Core Features
-- **Hybrid AI System**: Switch between cloud (OpenRouter) and local (liteLLM) models
-- **Multiple AI Models**: GPT-4, Claude 3.5, Gemini, Llama, Grok, Deepseek, and local models
-- **Streaming Chat**: Real-time responses like ChatGPT
-- **Smart Routing**: Automatic fallback between cloud and local models
-- **File Analysis**: PDF, Image, Excel upload and analysis
-- **Code Assistant**: Bug fixing, code generation, project structure builder
-- **User System**: Firebase Authentication with profiles and history
-- **Dark/Light Mode**: Modern UI with theme switching
-
-### Advanced Features
-- Voice Chat (Speech → Text)
-- Text → Speech (AI voice)
-- Image Generation
-- Document Summaries
-- Web Search Mode
-- AI Agents (Task automation)
->>>>>>> a292e4ad0da2c086dba7743d30e0b3f830e7b183
+---
 
 ## 🏗️ Architecture
 
+```mermaid
+graph TB
+    A[React.js Frontend<br/>TypeScript + Tailwind] --> B[Firebase Authentication<br/>Frontend Login + ID Token]
+    B --> C[Django Backend<br/>Token Verification + Route to AI Engine]
+    C --> D[OpenRouter API<br/>Cloud Models]
+    C --> E[liteLLM Local Gateway<br/>GPU/CPU Local Models]
+    
+    style A fill:#61DAFB,stroke:#333,stroke-width:2px
+    style B fill:#FFCA28,stroke:#333,stroke-width:2px
+    style C fill:#092E20,stroke:#333,stroke-width:2px
+    style D fill:#4285F4,stroke:#333,stroke-width:2px
+    style E fill:#FF6B6B,stroke:#333,stroke-width:2px
 ```
-┌────────────────────────────┐
-│     React.js Frontend       │
-│  (TypeScript + Tailwind)    │
-└───────────────┬────────────┘
-                │
-                ▼
-┌────────────────────────────┐
-│ Firebase Authentication     │
-│ Frontend Login + ID Token   │
-└───────────────┬────────────┘
-                │ Bearer Token
-                ▼
-┌────────────────────────────┐
-│      Django Backend         │
-│  - Token Verification       │
-│  - Route to AI Engine       │
-└───────────────┬────────────┘
-                │
-┌────────────────┴────────────────┐
-▼                                 ▼
-┌────────────────────────┐        ┌────────────────────────────┐
-│ OpenRouter API         │        │ liteLLM Local Gateway       │
-│ Cloud Models           │        │ GPU/CPU Local Models        │
-└────────────────────────┘        └────────────────────────────┘
-```
+
+---
 
 ## 📁 Project Structure
 
 ```
 ALPHA MIND/
 │
-├── frontend/           # React.js + TypeScript + Tailwind
+├── 🎨 frontend/           # React.js + TypeScript + Tailwind
 │   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── hooks/
-│   │   ├── utils/
-│   │   └── types/
-│   ├── public/
-│   └── package.json
+│   │   ├── components/   # Reusable UI components
+│   │   ├── pages/        # Application pages
+│   │   ├── hooks/        # Custom React hooks
+│   │   ├── utils/        # Utility functions
+│   │   └── types/        # TypeScript definitions
+│   ├── public/           # Static assets
+│   └── package.json       # Dependencies
 │
-├── backend/            # Django REST Framework
-<<<<<<< HEAD
-│   ├── alpha_mind/      # Django project settings
-│   ├── chat/            # Chat functionality
-│   ├── users/           # User management
-│   ├── files/           # File upload & analysis
-│   ├── gateway/         # AI model gateway
-│   └── requirements.txt
+├── 🗄️ backend/            # Django REST Framework
+│   ├── alpha_mind/       # Django project settings
+│   ├── chat/             # Chat functionality
+│   ├── users/            # User management
+│   ├── files/            # File upload & analysis
+│   ├── gateway/          # AI model gateway
+│   └── requirements.txt   # Python dependencies
 │
-├── ai_engine/           # FastAPI AI Engine
-│   ├── main.py          # FastAPI app
-│   ├── models.py        # Pydantic models
-│   ├── services.py      # AI services
-│   ├── providers.py     # AI providers
-│   └── requirements.txt
-=======
-│   ├── chat/
-│   ├── users/
-│   ├── models/
-│   ├── auth/
-│   ├── utils/
-│   └── requirements.txt
+├── 🤖 ai_engine/          # FastAPI AI Engine
+│   ├── main.py           # FastAPI app
+│   ├── models.py         # Pydantic models
+│   ├── services.py       # AI services
+│   ├── providers.py      # AI providers
+│   └── requirements.txt  # Python dependencies
 │
-├── local-llm/          # liteLLM Configuration
-│   ├── liteLLM.yaml
-│   ├── models/
-│   └── scripts/
->>>>>>> a292e4ad0da2c086dba7743d30e0b3f830e7b183
+├── 🦾 local-llm/          # liteLLM Configuration
+│   ├── liteLLM.yaml      # Configuration file
+│   ├── models/           # Local model storage
+│   └── scripts/          # Setup scripts
 │
-├── docs/              # Documentation
-│   ├── api.md
-│   ├── deployment.md
-│   └── setup.md
+├── 📚 docs/               # Documentation
+│   ├── api.md            # API documentation
+│   ├── deployment.md     # Deployment guide
+│   └── setup.md          # Setup instructions
 │
-└── README.md
+└── 📄 README.md           # This file
 ```
+
+---
 
 ## 🛠️ Tech Stack
 
-### Frontend
+### 🎨 Frontend
 - **React.js** with TypeScript
 - **Tailwind CSS** for styling
 - **Firebase** for authentication
 - **Axios** for API calls
 - **React Router** for navigation
-<<<<<<< HEAD
 - **Zustand** for state management
 - **React Query** for data fetching
-=======
->>>>>>> a292e4ad0da2c086dba7743d30e0b3f830e7b183
 
-### Backend
+### 🗄️ Backend
 - **Django** with REST Framework
 - **Firebase Admin SDK** for token verification
 - **OpenRouter API** for cloud models
 - **liteLLM** for local models
 - **Redis** for caching (optional)
 
-<<<<<<< HEAD
-### AI Engine
+### 🤖 AI Engine
 - **FastAPI** for AI model gateway
 - **OpenAI** for API compatibility
 - **litellm** for local model integration
 - **transformers** for local models
-=======
-### AI Models
-- **Cloud Models**: GPT-4, Claude 3.5, Gemini, Llama, Grok, Deepseek
-- **Local Models**: Llama 3.2, Phi-3, Mistral (via liteLLM)
->>>>>>> a292e4ad0da2c086dba7743d30e0b3f830e7b183
+
+---
 
 ## 🚀 Getting Started
 
-### Prerequisites
+### 📋 Prerequisites
 - Node.js 18+
 - Python 3.9+
 - Django 4.0+
@@ -171,36 +136,24 @@ ALPHA MIND/
 - OpenRouter API Key
 - GPU (for local models, optional)
 
-### Installation
+### 🔧 Installation
 
-<<<<<<< HEAD
-#### 1. Clone the repository
-=======
-1. **Clone the repository**
->>>>>>> a292e4ad0da2c086dba7743d30e0b3f830e7b183
+#### 1️⃣ Clone the repository
 ```bash
-git clone <repository-url>
+git clone https://github.com/syed-mujtaba-stack/ALPHA-MIND.git
 cd ALPHA-MIND
 ```
 
-<<<<<<< HEAD
-#### 2. Frontend Setup
-=======
-2. **Frontend Setup**
->>>>>>> a292e4ad0da2c086dba7743d30e0b3f830e7b183
+#### 2️⃣ Frontend Setup
 ```bash
 cd frontend
 npm install
 cp .env.example .env.local
 # Add Firebase config to .env.local
-npm start
+npm run dev
 ```
 
-<<<<<<< HEAD
-#### 3. Backend Setup
-=======
-3. **Backend Setup**
->>>>>>> a292e4ad0da2c086dba7743d30e0b3f830e7b183
+#### 3️⃣ Backend Setup
 ```bash
 cd backend
 python -m venv venv
@@ -212,8 +165,7 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-<<<<<<< HEAD
-#### 4. AI Engine Setup
+#### 4️⃣ AI Engine Setup
 ```bash
 cd ai_engine
 pip install -r requirements.txt
@@ -222,48 +174,33 @@ cp .env.example .env
 uvicorn main:app --reload
 ```
 
-#### 5. Local Models Setup (Optional)
-```bash
-cd ai_engine
-=======
-4. **Local Models Setup (Optional)**
+#### 5️⃣ Local Models Setup (Optional)
 ```bash
 cd local-llm
->>>>>>> a292e4ad0da2c086dba7743d30e0b3f830e7b183
 pip install litellm
 # Configure liteLLM.yaml
 # Download local models
 ```
 
+---
+
 ## 🔧 Configuration
 
-### Environment Variables
+### 🌐 Environment Variables
 
-<<<<<<< HEAD
-#### Frontend (.env.local)
+#### 🎨 Frontend (.env.local)
 ```env
-=======
-**Frontend (.env.local)**
-```
->>>>>>> a292e4ad0da2c086dba7743d30e0b3f830e7b183
-REACT_APP_FIREBASE_API_KEY=your_firebase_api_key
-REACT_APP_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
-REACT_APP_FIREBASE_PROJECT_ID=your_project_id
-REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-REACT_APP_FIREBASE_APP_ID=your_app_id
-REACT_APP_API_URL=http://localhost:8000
-<<<<<<< HEAD
-REACT_APP_AI_ENGINE_URL=http://localhost:4000
+VITE_FIREBASE_API_KEY=your_firebase_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+VITE_API_URL=http://localhost:8000
+VITE_AI_ENGINE_URL=http://localhost:4000
 ```
 
-#### Backend (.env)
+#### 🗄️ Backend (.env)
 ```env
-=======
-```
-
-**Backend (.env)**
-```
->>>>>>> a292e4ad0da2c086dba7743d30e0b3f830e7b183
 SECRET_KEY=your_django_secret_key
 DEBUG=True
 FIREBASE_PROJECT_ID=your_project_id
@@ -272,8 +209,7 @@ LITELLM_HOST=http://localhost:4000
 DATABASE_URL=sqlite:///db.sqlite3
 ```
 
-<<<<<<< HEAD
-#### AI Engine (.env)
+#### 🤖 AI Engine (.env)
 ```env
 OPENROUTER_API_KEY=your_openrouter_api_key_here
 LITELLM_HOST=http://localhost:4000
@@ -282,97 +218,98 @@ LOCAL_MODEL_PATH=./models
 GPU_ENABLED=true
 ```
 
-=======
->>>>>>> a292e4ad0da2c086dba7743d30e0b3f830e7b183
+---
+
 ## 📖 API Documentation
 
-### Authentication
+### 🔐 Authentication
 - `POST /api/auth/check/` - Verify Firebase token
 
-### Chat
-<<<<<<< HEAD
+### 💬 Chat
 - `POST /api/chat/send/` - Send chat message
 - `GET /api/chat/history/<session_id>/` - Get chat history
 - `POST /api/chat/save/` - Save conversation
 - `GET /api/chat/sessions/` - List chat sessions
-=======
-- `POST /api/chat/stream/` - Stream AI responses
-- `GET /api/chat/history/` - Get chat history
-- `POST /api/chat/save/` - Save conversation
->>>>>>> a292e4ad0da2c086dba7743d30e0b3f830e7b183
 
-### Models
+### 🤖 Models
 - `GET /api/models/list/` - List available models
 - `POST /api/models/switch/` - Switch active model
 
-### Files
+### 📁 Files
 - `POST /api/files/upload/` - Upload file for analysis
 - `POST /api/files/analyze/` - Analyze uploaded file
-<<<<<<< HEAD
 - `GET /api/files/list/` - List uploaded files
-=======
->>>>>>> a292e4ad0da2c086dba7743d30e0b3f830e7b183
+
+---
 
 ## 🎯 Usage
 
-1. **Sign up/login** with Firebase Authentication
-2. **Choose your AI model** from the dropdown
-3. **Start chatting** with streaming responses
-4. **Upload files** for analysis (PDF, images, Excel)
-5. **Switch to code mode** for development assistance
-6. **Enable offline mode** for local model usage
+1. **🔐 Sign up/login** with Firebase Authentication
+2. **🤖 Choose your AI model** from the dropdown
+3. **💬 Start chatting** with streaming responses
+4. **📁 Upload files** for analysis (PDF, images, Excel)
+5. **💻 Switch to code mode** for development assistance
+6. **🌐 Enable offline mode** for local model usage
+
+---
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a Pull Request
+1. **🍴 Fork** the repository
+2. **🌿 Create** a feature branch
+3. **💾 Commit** your changes
+4. **📤 Push** to the branch
+5. **🔀 Open** a Pull Request
 
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🙏 Acknowledgments
-
-<<<<<<< HEAD
-- **OpenRouter** for providing unified AI model access
-- **liteLLM** for local model integration
-- **Firebase** for authentication services
-- **Django Team** for the excellent framework
-- **FastAPI** for modern API development
+---
 
 ## 📊 Development Status
 
-### ✅ Completed (Phase 1)
+### ✅ Completed (Phase 1-2)
 - [x] Project structure setup
-- [x] Tailwind CSS configuration
+- [x] Modern React frontend with shadcn/ui
 - [x] Django backend with all apps
 - [x] FastAPI AI Engine
-- [x] Database models and migrations
-- [x] Environment configuration
+- [x] Firebase Authentication integration
+- [x] Real-time chat interface
+- [x] Message history persistence
 
-### 🚧 In Progress (Phase 2)
-- [ ] Firebase Authentication integration
-- [ ] Basic chat interface
-- [ ] Real-time messaging
+### 🚧 In Progress (Phase 3)
+- [ ] OpenRouter API integration
+- [ ] liteLLM local models setup
+- [ ] Smart routing implementation
+- [ ] Fallback mechanisms
 
-### 📋 Planned (Phase 3-5)
-- [ ] AI Model Integration
-- [ ] Advanced Features
-- [ ] Deployment & Testing
-
----
-
-**Ready to start building the future of AI chatbots? 🚀**
-=======
-- OpenRouter for providing unified AI model access
-- liteLLM for local model integration
-- Firebase for authentication services
-- Django Team for the excellent framework
+### 📋 Planned (Phase 4-5)
+- [ ] File analysis features
+- [ ] Voice chat functionality
+- [ ] Advanced AI agents
+- [ ] Deployment & testing
 
 ---
 
-Built with ❤️ by the ALPHA MIND team
->>>>>>> a292e4ad0da2c086dba7743d30e0b3f830e7b183
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🙏 Acknowledgments
+
+- **🤖 OpenRouter** for providing unified AI model access
+- **🦾 liteLLM** for local model integration
+- **🔥 Firebase** for authentication services
+- **🐍 Django Team** for the excellent framework
+- **⚡ FastAPI** for modern API development
+
+---
+
+<div align="center">
+
+**🚀 Ready to start building the future of AI chatbots?**
+
+[📖 Documentation](docs/) • [🐛 Report Bug](https://github.com/syed-mujtaba-stack/ALPHA-MIND/issues) • [💡 Feature Request](https://github.com/syed-mujtaba-stack/ALPHA-MIND/issues/new)
+
+Built with ❤️ by the **ALPHA MIND** team
+
+</div>
